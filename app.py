@@ -36,7 +36,7 @@ st.write("Upload the leaf image and we'll predict the disease class with our tra
 
 @st.cache_resource
 def load_model():
-    return tf.keras.models.load_model("best_model.keras", compile=False)
+    return tf.keras.models.load_model("best_model.h5", compile=False)
 
 model = load_model()
 
