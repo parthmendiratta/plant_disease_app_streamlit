@@ -36,9 +36,7 @@ st.write("Upload the leaf image and we'll predict the disease class with our tra
 
 @st.cache_resource
 def load_model():
-    model = build_model(input_shape=(224, 224, 3), num_classes=38)
-    model.load_weights("best_model.h5")  # only weights!
-    return model
+    return tf.keras.models.load_model("best_model.keras", compile=False)
 
 model = load_model()
 
@@ -64,6 +62,7 @@ uploaded_file=st.file_uploader("Upload an image of a plant leaf",type=["jpg", "j
 if uploaded_file is not None:
     with st.spinner("Analyzing...."):
         img_array,org_image=preprocess_image(uploaded_file)
+        print("Final image array shape:", img_array.shape)  # ✅ Add this line
         prediction=model.predict(img_array)
         pred_index=np.argmax(prediction)
         confidence=float(np.max(prediction))
