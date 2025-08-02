@@ -34,10 +34,11 @@ st.markdown("""
 st.title("🌿 Plant Disease Classifier")
 st.write("Upload the leaf image and we'll predict the disease class with our trained EfficientNet model.")
 
+@st.cache_resource
 def load_model():
     return tf.keras.models.load_model("best_model.h5", compile=False)
     
-
+    
 model = load_model()
 class_labels_dict = {
     'Apple___Apple_scab': 0, 'Apple___Black_rot': 1, 'Apple___Cedar_apple_rust': 2, 'Apple___healthy': 3,
