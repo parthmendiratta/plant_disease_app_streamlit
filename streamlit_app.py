@@ -39,7 +39,7 @@ def load_model():
     return tf.keras.models.load_model("best_model.h5", compile=False)
 
 model = load_model()
-
+st.write("✅ Model input shape:", model.input_shape)
 class_labels_dict = {
     'Apple___Apple_scab': 0, 'Apple___Black_rot': 1, 'Apple___Cedar_apple_rust': 2, 'Apple___healthy': 3,
     'Blueberry___healthy': 4, 'Cherry_(including_sour)___Powdery_mildew': 5, 'Cherry_(including_sour)___healthy': 6,
