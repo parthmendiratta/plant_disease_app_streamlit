@@ -18,7 +18,7 @@ This project is an AI-powered web application that identifies plant diseases fro
 ## 🌐 Live Demo
 
 Check out the deployed app 👉  
-🌐 [Plant Disease Prediction App – Streamlit](https://stock-forecasting-app-vcfos2fekk2flfywnkzcfn-parthmendiratta.streamlit.app/)
+🌐 [Plant Disease Prediction App – Streamlit](https://plantdiseaseappapp-parthmendiratta.streamlit.app/)
 
 ---
 
