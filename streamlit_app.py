@@ -34,9 +34,9 @@ st.markdown("""
 st.title("🌿 Plant Disease Classifier")
 st.write("Upload the leaf image and we'll predict the disease class with our trained EfficientNet model.")
 
-@st.cache_resource
 def load_model():
     return tf.keras.models.load_model("best_model.h5", compile=False)
+    
 
 model = load_model()
 st.write("✅ Model input shape:", model.input_shape)
