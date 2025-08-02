@@ -1,7 +1,7 @@
 import numpy as np
 from PIL import Image
 import tensorflow as tf
-
+import streamlit as st
 def preprocess_image(uploaded_file,target_size=(224,224)):
     img=Image.open(uploaded_file).convert("RGB")
     img=img.resize(target_size)
@@ -9,6 +9,8 @@ def preprocess_image(uploaded_file,target_size=(224,224)):
     img_array=img_array/255.0
     img_array=np.expand_dims(img_array,axis=0)
     print("Image mode:", img.mode)
+    st.write("Image mode:", img.mode)
+    st.write("Image shape before expand:", img_array.shape)
 
     return img_array,img 
 
